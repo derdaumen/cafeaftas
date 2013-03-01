@@ -1,0 +1,6 @@
+NextGEN Image Cropper - jQuery Image Cropping Plugin
+Author: 		Mitch McCoy
+
+Version 1.0
+----------------------------------------
+2011-12-25 : Initial Release (renamed O Crop plugin)

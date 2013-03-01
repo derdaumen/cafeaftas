@@ -1,0 +1,622 @@
+/*
+Theme Name: Cafe Aftas
+Theme URI: http://wordpress.org/
+Description: 2-column HTML5 theme for simple, image based portfolio websites (based on boilerplate template).
+Author: Stephan Pfaff
+Author URI: http://www.stephanpfaff.com
+Template: twentyeleven
+Version: 1.0
+Tags: beach, blue, white, purple, two-columns, fixed-width, custom-header, custom-background, translation-ready
+
+License: Attribution-NonCommercial-ShareAlike 3.0 Unported (88 BY-NC-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+*/
+
+@import url("../twentyeleven/style.css");
+
+/* ==========================================================================
+   TwentyEleven Layout Adjustments 
+   ========================================================================== */
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 12px; }
+
+/* ==========================================================================
+   General Layout 
+   ========================================================================== */
+body {
+	
+}
+
+#page{
+	max-width: 940px;
+	margin: 25px auto;
+	padding: 10px;
+	background: #fff;
+}
+header {
+	background: #fff;
+}
+#branding{
+	position: relative;
+	float: left;
+	height: 1.8em;
+	width: 100%;
+	margin-bottom: 0.7em;
+	border: none;
+	padding: 0;
+	z-index: 99;
+}
+#main{
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+	background: #fff;
+}
+footer{
+	float: left;
+	margin: 20px 0 0 0;
+	width: 100%;
+	border: none;
+	background: transparent;
+}
+
+/* ==========================================================================
+   General Design
+   ========================================================================== */
+body{
+	background: #fff url(img/bg_beach.jpg) no-repeat top left;
+}
+body, input, textarea {
+	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	line-height: 1.625;
+}
+h1 {
+	font-size: 14px;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	width: 100%;
+}
+.purple h1{
+	background: #5c124d;
+}
+h1,
+.blue h1{
+	background: #00aeef;
+}
+p {
+	margin-bottom: 1em;
+}
+.shadow {
+	-moz-box-shadow: 4px 4px 4px #000;
+	-webkit-box-shadow: 4px 4px 4px #000;
+	box-shadow: 4px 4px 4px #000;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+p img,
+.wp-caption {
+	margin-top: 0;
+}
+
+/* Image borders */
+img[class*="align"],
+img[class*="wp-image-"],
+#content .gallery .gallery-icon img {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
+	border: none;
+	padding: 0;
+}
+.wp-caption img {
+	border-color: #eee;
+}
+a:focus img[class*="align"],
+a:hover img[class*="align"],
+a:active img[class*="align"],
+a:focus img[class*="wp-image-"],
+a:hover img[class*="wp-image-"],
+a:active img[class*="wp-image-"],
+#content .gallery .gallery-icon a:focus img,
+#content .gallery .gallery-icon a:hover img,
+#content .gallery .gallery-icon a:active img {/* Add some useful style to those fancy borders for linked images ... */
+	background: #eee;
+	border-color: #bbb;
+}
+.wp-caption a:focus img,
+.wp-caption a:active img,
+.wp-caption a:hover img {/* ... including captioned images! */
+	background: #fff;
+	border-color: #ddd;
+}
+
+.content-bg {
+	position: absolute;
+}
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+
+#access {
+	position: absolute;
+	bottom: 0px;
+	clear: both;
+	display: block;
+	float: left;
+	background: transparent;
+    box-shadow: none;
+    margin: 0;
+	width: 100%;
+}
+#access div {
+	margin: 0;
+	padding: 0;
+}
+#access ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#access li {
+	float: left;
+	position: relative;
+}
+#access a {
+	color: #545454;
+	display: block;
+	padding: 0 7px;
+	text-decoration: none;
+	border-left: 1px solid #545454;
+	font-size: 1em;
+	line-height: 12px;
+}
+#access .first-menu-item a {
+	border-left: none;
+}
+#access ul ul {
+	display: none;
+	float: left;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	width: 188px;
+	z-index: 99999;
+	top: 1em;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #f9f9f9;
+	border-bottom: 1px dotted #ddd;
+	color: #545454;
+	font-weight: normal;
+	height: auto;
+	padding: 5px 5px;
+	width: 168px;
+	font-size: 12px;
+	line-height: 1em;
+}
+#access li:hover > a,
+#access ul ul :hover > a,
+#access a:focus {
+	background: #efefef;
+}
+#access li:hover > a,
+#access a:focus {
+	background: #f9f9f9; /* Show a solid color for older browsers */
+	color: #373737;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+#access .current-menu-item > a,
+#access .current-menu-ancestor > a,
+#access .current_page_item > a,
+#access .current_page_ancestor > a {
+	font-weight: bold;
+}
+
+/* Assistive text */
+.assistive-text {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+#access a.assistive-text:active,
+#access a.assistive-text:focus {
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	color: #1982d1;
+	clip: auto !important;
+	font-size: 12px;
+	position: absolute;
+	text-decoration: underline;
+	top: 0;
+	left: 7.6%;
+}
+
+/* =Menu Language
+-------------------------------------------------------------- */
+
+#access-language {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	clear: both;
+	display: block;
+	float: left;
+}
+#access-language ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#access-language li {
+	float: left;
+	position: relative;
+}
+#access-language a {
+	color: #545454;
+	display: block;
+	padding: 0 0.5em;
+	text-decoration: none;
+	border-left: 1px solid #545454;
+	line-height: 1em;
+}
+#access-language .first-menu-item a {
+	border-left: none;
+}
+#access-language li:hover > a,
+#access-language a:focus {
+	background: #efefef;
+}
+#access-language li:hover > a,
+#access-language a:focus {
+	background: #f9f9f9; /* Show a solid color for older browsers */
+	color: #373737;
+}
+#access-language ul li:hover > ul {
+	display: block;
+}
+#access-language .current-menu-item > a,
+#access-language .current-menu-ancestor > a,
+#access-language .current_page_item > a,
+#access-language .current_page_ancestor > a {
+	font-weight: bold;
+}
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
+
+#respond {
+	background: transparent;
+	border: none;
+}
+
+.commentlist > li.bypostauthor {
+    background: none repeat scroll 0 0 #fff;
+    border-color: #D3D3D3;
+}
+
+/*
+Facebook Comments
+*/
+
+body.transparent_widget {
+    background-color: #fff;
+    overflow: hidden;
+}
+   
+/* ==========================================================================
+   widget styles
+   ========================================================================== */
+
+#secondary.widget-area .widget {
+	overflow: hidden;
+	position: relative;
+	margin: 0 0 10px 0; 
+}
+.purple #secondary.widget-area .widget{
+	background: #ccbcc7;
+}
+#secondary.widget-area .widget,
+.blue #secondary.widget-area .widget{
+	background: #d3effb;
+}
+#secondary.widget-area .widget .textbox {
+	margin: 0.8em;
+}
+#secondary.widget-area .widget h1 {
+	font-size: 14px;
+	padding: 0.2em 0em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+}
+.purple #secondary.widget-area .widget h1{
+	background: #5c124d;
+}
+#secondary.widget-area .widget h1,
+.blue #secondary.widget-area .widget h1{
+	background: #00aeef;
+}
+#secondary #sidebar-image {
+	width: 100%;
+	height: 225px;
+	float:left;
+	overflow: hidden;
+}
+#secondary .widget .logo .logo {
+	position: absolute;
+	z-index: 9999;
+	top: 8px;
+	left: 8px;
+}
+.purple #secondary .widget .logo .logo {
+	background: url(images/ca-logo.png) top left no-repeat;
+	width: 63px;
+	height: 113px;
+}
+.blue #secondary .widget .logo .logo {
+	background: url(images/cdv-logo.png) top left no-repeat;
+	width: 175px;
+	height: 86px;
+	top: auto;
+	left: auto;
+	right: 8px;
+	bottom:8px;
+}
+
+#secondary .widget_slideshow .widget-title,
+#secondary .widget_custom_field_slideshow .widget-title {
+	display: none;
+}
+
+#secondary.widget-area .widget .entry-content img, .comment-content img, .widget img {
+    max-width: 100%;
+}
+
+/** contet_parts_widget **/
+.content_parts_widget .content-area h1 {
+	
+}
+
+/* ==========================================================================
+   footer.php
+   ========================================================================== */
+  
+#supplementary {
+	border: none;
+	padding: 0;
+	overflow: visible;
+}
+
+footer .widget-area .widget {
+	position: relative;
+	margin: 0 0 10px 0;
+	overflow: visible;
+}
+
+footer .purple .widget-area .widget{
+	background: transparent;
+}
+footer .widget-area .widget,
+	footer .blue .widget-area .widget{
+	background: transparent;
+}
+
+/* ==========================================================================
+   front-page.php
+   ========================================================================== */
+
+#primary.front-page,
+.left-sidebar #primary.front-page {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	min-height: 0;
+}
+#primary.front-page #content,
+.left-sidebar #primary.front-page #content{
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	top: 0;
+}
+.teaser{
+	position: relative;
+	float: left;
+	width: 300px;
+	height: 330px;
+	overflow: hidden;
+}
+#teaser-left{
+	margin: 0 10px 0 0;
+}
+#teaser-middle{
+	margin: 0 10px 0 10px;
+}
+#teaser-right{
+	margin: 0 0 0 10px;
+}
+.caption {
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+}
+.caption h1 {
+	font-size: 12px;
+	line-height: 2em;
+	padding: 0 8px;
+	font-family: Arial, Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.purple .caption h1{
+	background: #5c124d;
+}
+.caption h1,
+.blue .caption h1{
+	background: #00aeef;
+}
+
+/* ==========================================================================
+   index.php & page.php
+   ========================================================================== */
+
+#primary,
+.left-sidebar #primary{
+    width: 625px;
+    min-height: 486px;
+    position: relative;
+	overflow: hidden;
+}
+#primary {
+    float: left;
+    margin: 0 10px 0 0;
+}
+.left-sidebar #primary{
+	float: right;
+    margin: 0 0 0 0;
+}
+.left-sidebar #secondary {
+	position: relative;
+    float: left;
+    margin-left: 0;
+    margin-right: 10px;
+    width: 305px;
+    min-height: 486px;
+	overflow: hidden;
+}
+#secondary {
+	position: relative;
+    float: right;
+    margin-right: 0;
+    width: 305px;
+    min-height: 486px;
+	overflow: hidden;
+}
+#content,
+.left-sidebar #content{
+	position: absolute;
+	top: 130px;
+	color: #fff;
+	margin: 0;
+	padding: 10px 15px;
+	width: 595px;
+}
+.purple #content,
+.purple .left-sidebar #content {
+	background: rgb(92, 18, 77);
+	background: rgba(92, 18, 77, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc5c124d, endColorstr=#cc5c124d);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc5c124d, endColorstr=#cc5c124d)";
+}
+#content,
+.blue #content,
+.blue .left-sidebar #content {
+	background: rgb(0, 174, 239);
+	background: rgba(0,174, 239, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef)";
+}
+#three-column-content {
+	position: absolute;
+	top: 0;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+}
+#three-column-content .content-column{
+	position: relative;
+	float: left;
+	margin: 0 0 0 2.4%;
+	width: 27%;
+	padding: 10px;
+}
+.purple #three-column-content .content-column{
+	background: rgb(92, 18, 77);
+	background: rgba(92, 18, 77, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc5c124d, endColorstr=#cc5c124d);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc5c124d, endColorstr=#cc5c124d)";
+}
+#three-column-content .content-column,
+.blue #three-column-content .content-column{
+	background: rgb(0, 174, 239);
+	background: rgba(0,174, 239, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef)";
+}
+#three-column-content #content-column1{
+	
+}
+#three-column-content #content-column2{
+	
+}
+#three-column-content #content-column3{
+	
+}
+
+/* ==========================================================================
+   gallery.php
+   ========================================================================== */
+
+#primary.gallery {
+	width: 100%;
+    min-height: 486px;
+    position: relative;
+	overflow: hidden;
+    float: left;
+    margin: 0 10px 0 0;
+}
+#gallery {
+}
+.purple #gallery {
+	background: rgb(92, 18, 77);
+	background: rgba(92, 18, 77, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc5c124d, endColorstr=#cc5c124d);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc5c124d, endColorstr=#cc5c124d)";
+}
+#gallery,
+.blue #gallery {
+	background: rgb(0, 174, 239);
+	background: rgba(0,174, 239, 0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef)";
+}
+ 
+
+/* ==========================================================================
+   ngg modifications
+   ========================================================================== */
+
+.ngg-singlepic {
+	padding: 0 !important;
+}
+
+.ngg-galleryoverview {
+  clear: both;
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 10px;
+  width: 930px;
+}

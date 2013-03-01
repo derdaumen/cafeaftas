@@ -1,0 +1,19 @@
+/* This stylesheet is used to style the public view of the widget. */
+
+
+.content_parts_widget{
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+.content_parts_widget .content-area {
+	padding: 0;
+}
+.content_parts_widget .content-area h1{
+	margin: 0 0 10px 0;
+}
+
+.widget_slideshow {
+	width: 305px;
+	height: 203px;
+}
