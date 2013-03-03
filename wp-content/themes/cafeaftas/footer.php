@@ -22,7 +22,7 @@
 					get_sidebar( 'footer' );
 			?>
 			<?php /* echo do_shortcode('[fbcomments url="http://cafeaftas.com"]'); */ ?>
-			<? /* php comments_template( '', true ); */ ?>
+			<?php /* comments_template( '', true ); */  ?>
 			
 	</footer><!-- #colophon -->
 </div><!-- #page -->

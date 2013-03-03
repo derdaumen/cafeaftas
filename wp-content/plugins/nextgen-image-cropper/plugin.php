@@ -3,7 +3,7 @@
  * Plugin Name: NextGEN Image Cropping
  * Plugin URI: http://www.omegafi.com
  * Description: Extension of NextGen Gallery to allow image cropping
- * Version: 1.0
+ * Version: 1.2
  *
  * Author: Mitch McCoy
  * Author URI: http://www.omegafi.com
@@ -36,8 +36,8 @@ class NGGImageCropper {
 
 		add_action( 'admin_init', array(&$this, 'register_init') );
 		add_action( 'admin_menu', array (&$this, 'add_menu') );
-		add_action('admin_print_scripts-gallery_page_nggallery-manage-gallery', array(&$this,'add_gallery_script'));
-		add_action('admin_print_styles-gallery_page_nggallery-manage-gallery', array(&$this,'add_gallery_style'));
+		add_action('admin_print_scripts', array(&$this,'add_gallery_script'));
+		add_action('admin_print_styles', array(&$this,'add_gallery_style'));
 	
 		$this->options		=	get_option ('ngg_crop');
 		

@@ -2,9 +2,9 @@
 Contributors: Mitch McCoy
 Donate link: http://tinyurl.com/6oc6mt5
 Tags: photos,images,gallery,media,admin,photo-albums,pictures,photo,picture,image,nextgen-gallery,nextgen gallery,cropping,crop
-Requires at least: 3.0
-Tested up to: 3.2.1
-Stable tag: trunk
+Requires at least: 3.3
+Tested up to: 3.5.1
+Stable tag: 1.2
 
 NextGEN Image Cropper extends the NextGen Gallery plugin to allow cropping of images.
 
@@ -16,7 +16,7 @@ The NextGen image meta data is also updated with the new image dimensions.
 
 == Installation ==
 
-Requires jQuery 1.6 (or higher)
+Requires jQuery 1.7 (or higher)
 
 Requires NextGen Gallery plugin (1.8.4 or higher)
 
@@ -46,7 +46,16 @@ A:  The plugin options are stored as a site option array called 'ngg_crop'.  You
 1.  Select the area you wish to crop.
 2.  View the new image with a confirmation message.
 
-
 == Changelog ==
 
-v1.0  Initial revision
+= 1.2 - 02.26.2013 =
+* Fixed: Crop link missing when using foreign language
+
+= 1.1 - 02.26.2013 =
+* Fixed: Crop form action url (Removed $_SERVER['REDIRECT_URL'])
+* Changed: Converted all jQuery events to .on  (requires jQuery 1.7)
+* NEW: Added link to edit thumbnail after cropping image
+
+= 1.0 - 12.25.2011 =
+* Initial revision
+

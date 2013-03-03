@@ -1,0 +1,30 @@
+s13Q<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":32:{s:2:"ID";i:140;s:11:"post_author";s:1:"4";s:9:"post_date";s:19:"2012-02-19 15:02:21";s:13:"post_date_gmt";s:19:"2012-02-19 15:02:21";s:12:"post_content";s:5193:"<!--:fr--><p>Le «Café / Restaurant AFTAS» avec «Surf school CHASSEURS DE VAGUES» est situé sur la «Plage Aftas», une des nombreuses criques de la région. L’atmosphère qu’il y règne a séduit nombre de voyageurs depuis les années 1980. Loin d’être victime de son succès Mirleft et ses habitants autochtones ou voyageurs ont su préserver la paix et le charme de ce bel endroit. La douceur du climat offre une météo très clémente presque toute l’année et permet la pratique de différentes activités sur place ainsi que la découverte des environs. Une petite crique où les pêcheurs mettent à l’eau leurs embarcations à la force des bras et réparent les filets pendant des heures dans un cache de rêve. Saisissez votre chance. Venez découvrir un mode et un rythme de vie différent.</p>
+<p><!--contentpartdivider--></p>
+<p><!--contentpartdivider--></p>
+<p><!--contentpartdivider--></p>
+<p>[singlepic id=65 w=320 h=240 float=]</p>
+<p> <!--contentpartdivider--></p>
+<h1>La région "Souss Massa Draâ"</h1>
+<p style="text-align: center;">On vous montre les plus jolis endroits de la région...</p>
+<p style="text-align: center;">Soi des <strong>promenades guidées</strong> en montagne pour déguster <strong>l’huile d’argan</strong> sur place ou bien des visites dans la ville de<strong> Tiznit</strong> qui est connu pour ces bijoux ou les arcs de la <strong>Plage Legzira</strong>.</p>
+<p style="text-align: center;">On organise tout ce qu'il faut et on vous accompagne.</p><!--:--><!--:de--><p>Das "Café / Restaurant AFTAS" mit Surfschule "CHASSEURS DES VAGUES" liegt in der paradiesischen Fischerbucht "Plage Aftas", 10 min. zu Fuß vom Dorf entfernt. Mirleft, das charmante Städtchen im Süden Marokkos bestach schon in den 80er Jahren durch sein außergewöhnliches Ambiente und zog viele Touristen an. Trotz der steigenden Einwohnerzahlen hat Mirleft seinen Flair nicht verloren. Auf Grund seines milden Klimas bietet die Region Souss-Massa-Drâa ein ganzjähriges Urlaubsvergnügen mit vielfältigem Freizeitangebot. “La Plage Aftas” heißt die kleine Fischerbucht von Mirleft. Hier waren schon seit je her die einheimischen Fischer angesiedelt. Reisende, die ihren Minztee auf der Terrasse des “Café AFTAS” genießen, werden sogleich in eine andere Welt, weit entfernt vom alltäglichen Stress der westlichen Kultur entführt: Die schweren Holzboote werden noch durch Manneskraft ins Meer getragen und nach getaner Arbeit in den Wellen müssen stundenlang im Sand die Netze entknotet werden.</p>
+<p><!--contentpartdivider--></p>
+<p><!--contentpartdivider--></p>
+<p><!--contentpartdivider--></p>
+<p>[singlepic id=65 w=320 h=240 float=] <!--contentpartdivider--></p>
+<h1>Die Region "Souss Massa Draâ"</h1>
+<p style="text-align: center;">Wir zeigen Euch die schönsten Orte der Region...</p>
+<p style="text-align: center;">Egal ob ihr ein Besuch des Schmuckstädtchen <strong>Tiznit</strong> oder einen Spaziergang an den <strong>Sandsteinbögen des Plage Legzira</strong> plant...wir begleiten euch und organisieren alles Nötige.</p>
+<p style="text-align: center;">Ein ganz besonderes Erlebnis bieten wir euch mit unseren <strong>Wanderungen zu einer Berberfamilie</strong> im Hinterland von Mirleft, wo <strong>Arganöl</strong> hergestellt und verköstigt wird.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><!--:--><!--:en--><p>The "Café / Restaurant Aftas" with "Surf school Chasseurs de Vagues" is located at "Plage Aftas", one of the many beaches and bays of the area. This little paradise is about 10 min walk from the village center. Ever since the 80's Mirleft, in the south of Morocco has been popular with tourists who were attracted by the extraordinary flair. Even though the population increased steadily Mileft has lost none of its traditional charm and popularity. Due to its mild climate the area can be visited all year round and offers a wide range of activities. Visitors, with or without surfboard, will meet a different way of life at Plage Aftas where the local fishermen still carry their heavy boats by pure muscle strength to the ocean and spend hour after hour to prepare their nets on the beach. All this will give the interested traveler a chance to not only take home pictures of amazing sunsets, but also a truly authentic experience of the traditional Moroccan lifestyle.</p>
+<p><!--contentpartdivider--></p>
+<p><!--contentpartdivider--></p>
+<p><!--contentpartdivider--></p>
+<p>[singlepic id=65 w=320 h=240 float=]<!--contentpartdivider--></p>
+<h1>The region "Souss Massa Draâ"</h1>
+<p style="text-align: center;">It doesnt matter if your here just to visit the well known jewelry town of <strong>Tiznit</strong> or are planning a stroll through<strong> the sand stone arches of Plage Legzira</strong>...we can take away the trouble of planning and accompany you the whole way.</p>
+<p style="text-align: center;">One of our speciality tours is a walk through the beautiful region of Mirleft, where we visit a <strong>local Berber Family</strong> and can see where the rare<strong> Argan oil</strong> is made.</p>
+<p style="text-align: center;"> </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><!--:-->";s:10:"post_title";s:21:"Mirleft & Plage Aftas";s:12:"show_in_menu";s:1:"1";s:9:"link_link";s:1:"1";s:14:"no_follow_link";s:1:"0";s:13:"alt_link_text";N;s:17:"custom_link_class";N;s:12:"redirect_url";N;s:12:"target_blank";s:1:"0";s:19:"alt_title_attribute";N;s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:6:"closed";s:11:"ping_status";s:4:"open";s:13:"post_password";s:0:"";s:9:"post_name";s:22:"mirleft-la-plage-aftas";s:7:"to_ping";s:0:"";s:6:"pinged";s:0:"";s:13:"post_modified";s:19:"2013-01-24 13:40:17";s:17:"post_modified_gmt";s:19:"2013-01-24 13:40:17";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";i:0;s:4:"guid";s:33:"http://cafeaftas.com/?page_id=140";s:10:"menu_order";i:3;s:9:"post_type";s:4:"page";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"1";s:6:"filter";s:3:"raw";}}

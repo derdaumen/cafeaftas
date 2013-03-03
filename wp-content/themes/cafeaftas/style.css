@@ -179,7 +179,6 @@ a:active img[class*="wp-image-"],
 	line-height: 12px;
 }
 #access .first-menu-item a {
-	border-left: none;
 }
 #access ul ul {
 	display: none;
@@ -477,7 +476,7 @@ footer .widget-area .widget,
 }
 
 /* ==========================================================================
-   index.php & page.php
+   index.php, page.php & sidebar-page.php
    ========================================================================== */
 
 #primary,
@@ -536,6 +535,11 @@ footer .widget-area .widget,
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef)";
 }
+
+/* ==========================================================================
+   sidebar-page-three-columns.php
+   ========================================================================== */
+   
 #three-column-content {
 	position: absolute;
 	top: 0;
@@ -602,6 +606,20 @@ footer .widget-area .widget,
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc00aeef, endColorstr=#cc00aeef)";
 }
  
+ 
+ /* ==========================================================================
+   guestbook.php
+   ========================================================================== */
+   
+#content.tall,
+.left-sidebar #content.tall{
+	position: absolute;
+	top: 0;
+	color: #fff;
+	margin: 0;
+	padding: 10px 15px;
+	width: 595px;
+	height: 100%;
 
 /* ==========================================================================
    ngg modifications

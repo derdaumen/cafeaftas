@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
-			
 	// Insert the crop link into NextGen image actions
-	$('.gallery_page_nggallery-manage-gallery #ngg-listimages tbody tr').each(function(index) {
+	$('form#updategallery #ngg-listimages tbody tr').each(function(index) {
 		var rowID = $(this).attr('id'),
 			pictureID = '';
 		
@@ -14,27 +13,28 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
-	$('a.ngg_crop_dialoglink').click(function() {
-		var thelink = $(this),
-			dialog = $('<div id="ngg_crop_dialog" style="display:hidden"></div>').appendTo('body');
+	$('form#updategallery').on('click','a.ngg_crop_dialoglink', function() {																							 
+		var $thelink = $(this),
+			$dialog = $('<div id="ngg_crop_dialog" style="display:none"></div>').appendTo('body');
 		
-        if( $( "#spinner" ).length == 0) {
+        if($("#spinner").length == 0) {
             $("body").append('<div id="spinner"></div>');
 		}
 
         $('#spinner').fadeIn();
+		$('img#cropthis').remove();
 		
         // load the remote content
-        dialog.load(thelink.attr('href'), function () {
+        $dialog.load($thelink.attr('href'), function () {
 			$('#spinner').hide();
-            dialog.dialog({
-            	title: thelink.attr('title'),
+            $dialog.dialog({
+            	title: $thelink.attr('title'),
                 width: 'auto',
                 height: 'auto',
 				position: [100,100],
                 modal: true,
                 resizable: true,
-                close: function() { dialog.remove(); }
+                close: function() { $dialog.remove(); }
 			});
 			
 			jcropoptions = {
@@ -42,98 +42,132 @@ jQuery(document).ready(function($) {
 				aspectRatio	:	ngg_crop.aspect,
 				boxWidth	:	ngg_crop.imagesize,
 				minSize		:	[ngg_crop.crop_width, ngg_crop.crop_height],
-				onChange	:	showCoords,
-				onSelect	:	showCoords};				
+				onChange	:	nggcrop_preview,
+				onSelect	:	nggcrop_preview};
 			
-			$('#cropthis').Jcrop(jcropoptions);
+			$dialog.find('img#cropthis').one('load', function(e) {
+				$(this).Jcrop(jcropoptions);
+			});
+			
+			// Fix bug in jCrop going black on multiple crops
+			setTimeout(function() {
+				$dialog.find('.jcrop-holder img').show();
+			}, 2000);
 		});
 		
         //prevent the browser to follow the link
         return false;
     });
-	
+
 	// Use preselected crop
-	$('.ngg_crop input#usepreselected').live('click', function() {
+	$(document).on('click', '.ngg_crop input#usepreselected', function() {
 		// Retrieve the Jcrop object
-		jcrop = $('#cropthis').data('Jcrop');
+		var jcropobj = $('img#cropthis').data('Jcrop');
 		
 		if($(this).is(':checked')) {
 			$('.ngg_crop #lockaspect').prop('disabled','disabled');
 			$('.ngg_crop #lockaspect').prop('checked',true);
 			
 			// Set selection size
-			jcrop.setOptions({setSelect	:	[20,20,ngg_crop.crop_width, ngg_crop.crop_height]});
-			jcrop.setOptions({aspectRatio:	ngg_crop.aspect});
+			jcropobj.setOptions({setSelect	:	[20,20,ngg_crop.crop_width, ngg_crop.crop_height]});
+			jcropobj.setOptions({aspectRatio:	ngg_crop.aspect});
 		}
 		else {		
 			$('.ngg_crop #lockaspect').prop('disabled',false);
 			$('.ngg_crop #lockaspect').prop('checked',false);
-			jcrop.setOptions({aspectRatio:	null});
+			jcropobj.setOptions({aspectRatio:	null});
 		}
 		
 		// Save the new jcrop options
-		$('#cropthis').data('Jcrop', jcrop);		
+		$('img#cropthis').data('Jcrop', jcropobj);		
 	});
-	
-	$('.ngg_crop input#lockaspect').live('click', function() {
-		// Retrieve the Jcrop object
-		jcrop = $('#cropthis').data('Jcrop');
+
+	$(document).on('click', '.ngg_crop input#lockaspect', function(e) {
+		var $dom = $(this),
+			jcropobj = $('img#cropthis').data('Jcrop');
 		
-		if($(this).is(':checked')) {
-			theselect = jcrop.tellSelect();
+		if($dom.is(':checked')) {
+			theselect = jcropobj.tellSelect();
 			current_aspect = (theselect.w / theselect.h);
-			jcrop.setOptions({aspectRatio:	current_aspect});
+			jcropobj.setOptions({aspectRatio:	current_aspect});
 		}
 		else {		
-			$('.ngg_crop #lockaspect').prop('disabled',false);
-			jcrop.setOptions({aspectRatio:	null});
+			$('.ngg_crop input#lockaspect').prop('disabled',false);
+			jcropobj.setOptions({aspectRatio:	null});
 		}
 		
 		// Save the new jcrop options
-		$('#cropthis').data('Jcrop', jcrop);
+		$('img#cropthis').data('Jcrop', jcropobj);
 	});
 	
+	$(document).on('click', '.ngg_crop a.thumbnail_review', function(e) {
+		var pictureID = $(this).attr('pictureID'),
+			$dialog = $('#ngg_crop_dialog');
+			
+		$dialog.dialog('close');
+		
+		$('form#updategallery #ngg-listimages tbody tr#picture-' + pictureID + ' .row-actions .custom_thumb a').trigger('click');
+		
+		return false;
+	});	
 	
-	$('.ngg_crop_form').live('submit', function(e, params) {
-		var formurl = $(this).attr('action'),
-			post = $(this).serialize(),
-			dialog = $('#ngg_crop_dialog'),
-			jcrop = $('#cropthis').data('Jcrop'),
+	$(document).on('submit', '.ngg_crop .ngg_crop_form', function(e) {
+		var $form = $(this), 
+			formurl = $form.attr('action'),
+			post = $form.serialize(),
+			$pictureID = $form.find('#pictureID'),
+			$dialog = $('#ngg_crop_dialog'),
+			jcropobj = $('img#cropthis').data('Jcrop'),
 			trackerwidth = $('.jcrop-tracker').width();
 			
-		$.post(formurl, post, function(response) {
+		if($form.find('.spinner').length == 0) {
+            $form.find('input[type=submit]').after('<div class="spinner" style="display: inline-block">&nbsp;</div>');
+		}
+
+        $form.find('.spinner').show();
 			
+		$.post(formurl, post, function(response) {			
 			if(response) {
-				dialog.prepend('<div class="error">' + response + '</div>');
+				$dialog.prepend('<div class="error">' + response + '</div>');
 			}
 			else {								   
 				// Add success message
-				dialog.find('.ngg_crop_data').html('<div class="updated"><p>Image Updated.&nbsp;&nbsp;Please clear your browser cache.</p></div>');
-				
-				jcrop.destroy();
-				
+				html = '<div class="updated">';
+					html += '<p>';
+						html += '<b>Image Updated.</b><br>';
+						html += 'Please clear your browser cache.<br>';
+						html += '<a class="thumbnail_review" href="#" pictureID="' + $pictureID.val() + '">Review your thumbnail</a> to see if it needs cropping as well.';
+					html += '</p>';
+				html += '</div>';
+				$dialog.find('.ngg_crop_data').html(html);
+	
+				jcropobj.destroy();
+								
 				// Update the image
-				dialog.find('img').each(function(index) {
-					oldsrc = $(this).attr('src');
-					srcsplit = oldsrc.split('?');
-					newsrc = srcsplit[0] + '?' + Math.random(0,10000);	
+				$form.find('img').each(function(index) {
+					var oldsrc = $(this).attr('src'),
+						srcsplit = oldsrc.split('?'),
+						newsrc = srcsplit[0] + '?' + Math.random(0,10000);
+						
 					$(this).attr('src',newsrc);
 					$(this).attr('width',trackerwidth);
 				});				
 			}
-		});
+			$form.find('.spinner').remove();
+		});	
 		
 		return false;
 	});	
+
 });
 
 // Simple event handler, called from onChange and onSelect
 // event handlers, as per the Jcrop invocation above
-function showCoords(c) {
-	jQuery('#x1').val(c.x);
-	jQuery('#y1').val(c.y);
-	jQuery('#x2').val(c.x2);
-	jQuery('#y2').val(c.y2);
-	jQuery('#cropwidth').val(c.w);
-	jQuery('#cropheight').val(c.h);
+function nggcrop_preview(c) {
+	jQuery('.ngg_crop_form #x1').val(c.x);
+	jQuery('.ngg_crop_form #y1').val(c.y);
+	jQuery('.ngg_crop_form #x2').val(c.x2);
+	jQuery('.ngg_crop_form #y2').val(c.y2);
+	jQuery('.ngg_crop_form #cropwidth').val(c.w);
+	jQuery('.ngg_crop_form #cropheight').val(c.h);
 }

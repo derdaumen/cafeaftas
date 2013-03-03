@@ -25,7 +25,7 @@ get_header(); ?>
 				<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
 				<?php endif; // end check for featured image or standard header ?>
     		</div> --> <!--! end of #content-bg -->
-			<div id="gallery" role="main">
+			<div id="gallery" role="main" class="full">
 				
 				<?php if ( function_exists( 'the_content_part' ) ) {
 					the_content_part( 1 );
